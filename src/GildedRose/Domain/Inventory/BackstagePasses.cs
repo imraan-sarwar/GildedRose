@@ -14,6 +14,11 @@ namespace Domain.Inventory.Items
         {
             DecreaseSellingDay();
 
+            if (SellingDays > 10)
+            {
+                Quality = Quality + 1;
+            }
+
             Validate();
 
         }
