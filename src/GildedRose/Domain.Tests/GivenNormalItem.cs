@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace Domain.Tests
 {
-    public class Tests
+    public class GivenNormalItem
     {
         private SellingItem _sellingItem;
 
@@ -19,8 +19,9 @@ namespace Domain.Tests
         }
 
         [Test]
-        public void Test1()
+        public void SellingDaysDecreasesByOne()
         {
+
         }
     }
 }
