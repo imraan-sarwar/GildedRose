@@ -1,3 +1,4 @@
+using Domain.Inventory.Items;
 using Domain.Models;
 using NUnit.Framework;
 
@@ -21,6 +22,8 @@ namespace Domain.Tests
         [Test]
         public void SellingDaysDecreasesByOne()
         {
+            var n = new NormalItem(_sellingItem);
+            Assert.AreEqual(0, n.SellingDays);
 
         }
     }
