@@ -27,6 +27,23 @@ namespace Domain.Tests
             var b = new BackstagePasses(_sellingItem);
             Assert.AreEqual(0, b.SellingDays);
         }
-     
+
+        [Test]
+        public void QualityIsNeverAbove50()
+        {
+            _sellingItem.Quality = 53;
+            _sellingItem.SellingDays = 5;
+            var b = new BackstagePasses(_sellingItem);
+            Assert.AreEqual(50, b.Quality);
+        }
+
+        [Test]
+        public void QualityIsNeverBelowZero()
+        {
+            _sellingItem.Quality = 0;
+            var b = new BackstagePasses(_sellingItem);
+            Assert.AreEqual(0, b.Quality);
+        }
+
     }
 }
