@@ -10,6 +10,8 @@ namespace Domain.Inventory
         {
             switch (item.Name)
             {
+                case "Aged Brie":
+                    return new AgedBrie(item);
                 case "Backstage passes":
                     return new BackstagePasses(item);
                 case "Normal Item":
