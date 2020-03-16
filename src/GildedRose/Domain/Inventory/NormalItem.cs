@@ -17,10 +17,19 @@ namespace Domain.Inventory.Items
             {
                 Quality = Quality - 1;
             }
+            if (SellingDays < 0 && Quality > 0)
+            {
+                Quality = Quality - 1;
+            }
 
             if (Quality >= 50)
             {
                 Quality = 50;
+            }
+
+            if (Quality <= 0)
+            {
+                Quality = 0;
             }
         }
     }
