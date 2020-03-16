@@ -1,3 +1,10 @@
+How to build and run.
+Download and install nunit test adapter (https://marketplace.visualstudio.com/items?itemName=NUnitDevelopers.NUnit3TestAdapter).
+Clean and build solution.
+Hit f11 or the play button to run.
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
 Gilded Rose problem adapted from Gilded Rose Kata b y https://twitter.com/TerryHughes
 Hi and welcome to team Gilded Rose. We are a small inn with a prime location in a
 prominent city ran by a friendly innkeeper named Allison. We also buy and sell only the
