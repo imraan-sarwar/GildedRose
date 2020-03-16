@@ -12,7 +12,7 @@ namespace ConsoleApp4
     {
         static void Main(string[] args)
         {
-            var s = new List<SellingItem>()
+            var si = new List<SellingItem>()
             {
                 new SellingItem() { Name = "Aged Brie", Quality = 1, SellingDays = 1 },
                 new SellingItem() { Name = "Backstage passes", Quality = 2, SellingDays = -1 },
@@ -24,7 +24,7 @@ namespace ConsoleApp4
                 new SellingItem() { Name = "Conjured", Quality = 2, SellingDays = 2},
                 new SellingItem() { Name = "Conjured", Quality = 5, SellingDays = -1 },
             };
-            s.ForEach(x => {
+            si.ForEach(x => {
                 var i = InventoryFactory.Get(x);
                 if (i is Invalid)
                 {
@@ -34,7 +34,6 @@ namespace ConsoleApp4
                 {
                     Console.WriteLine($"{i.Name} {i.SellingDays} {i.Quality}");
                 }
-
             });
         }
     }
