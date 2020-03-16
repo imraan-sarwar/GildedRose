@@ -32,5 +32,13 @@ namespace Domain.Tests
             var n = new NormalItem(_sellingItem);
             Assert.AreEqual(0, n.Quality);
         }
+
+        [Test]
+        public void QualityIsNeverAbove50()
+        {
+            _sellingItem.Quality = 53;
+            var n = new NormalItem(_sellingItem);
+            Assert.AreEqual(50, n.Quality);
+        }
     }
 }

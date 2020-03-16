@@ -17,6 +17,11 @@ namespace Domain.Inventory.Items
             {
                 Quality = Quality - 1;
             }
+
+            if (Quality >= 50)
+            {
+                Quality = 50;
+            }
         }
     }
 }
