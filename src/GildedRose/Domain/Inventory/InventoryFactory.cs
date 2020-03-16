@@ -15,7 +15,7 @@ namespace Domain.Inventory
                 case "Normal Item":
                     return new NormalItem(item);
             }
-            throw new Exception("Invalid!");
+            return new Invalid(item);
         }
     }
 }
