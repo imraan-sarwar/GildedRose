@@ -24,7 +24,13 @@ namespace Domain.Tests
         {
             var n = new NormalItem(_sellingItem);
             Assert.AreEqual(0, n.SellingDays);
+        }
 
+        [Test]
+        public void QualityDecreasesByOne()
+        {
+            var n = new NormalItem(_sellingItem);
+            Assert.AreEqual(0, n.Quality);
         }
     }
 }
