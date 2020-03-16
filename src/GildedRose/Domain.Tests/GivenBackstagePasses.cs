@@ -45,5 +45,14 @@ namespace Domain.Tests
             Assert.AreEqual(0, b.Quality);
         }
 
+        [Test]
+        public void SellingDaysIsGreaterThan10_Then_QualityIncreasesByOne()
+        {
+            _sellingItem.Quality = 15;
+            _sellingItem.SellingDays = 15;
+            var b = new BackstagePasses(_sellingItem);
+            Assert.AreEqual(16, b.Quality);
+        }
+
     }
 }
