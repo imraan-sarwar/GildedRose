@@ -13,6 +13,8 @@ namespace Domain.Inventory.Items
         {
             DecreaseSellingDay();
 
+            Quality = Quality + 1;
+
             Validate();
         }
     }
