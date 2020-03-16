@@ -6,6 +6,7 @@ namespace Domain.Inventory.Items
     {
         public NormalItem(SellingItem sellingItem) : base(sellingItem)
         {
+            SellingDays = SellingDays - 1;
         }
     }
 }
