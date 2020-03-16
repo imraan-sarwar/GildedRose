@@ -11,7 +11,7 @@ namespace Domain.Inventory.Items
 
         public void Process()
         {
-            SellingDays = SellingDays - 1;
+            DecreaseSellingDay();
 
             if (Quality > 0)
             {
@@ -22,15 +22,7 @@ namespace Domain.Inventory.Items
                 Quality = Quality - 1;
             }
 
-            if (Quality >= 50)
-            {
-                Quality = 50;
-            }
-
-            if (Quality <= 0)
-            {
-                Quality = 0;
-            }
+            Validate();
         }
     }
 }

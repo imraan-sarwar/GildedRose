@@ -17,5 +17,22 @@ namespace Domain.Inventory
             Name = sellingItem.Name;
         }
 
+        public void DecreaseSellingDay()
+        {
+            SellingDays = SellingDays - 1;
+        }
+
+        public void Validate()
+        {
+            if (Quality >= 50)
+            {
+                Quality = 50;
+            }
+            if (Quality <= 0)
+            {
+                Quality = 0;
+            }
+        }
+
     }
 }
