@@ -1,15 +1,17 @@
-using Domain.Inventory.Items;
+
+
+using Domain.Inventory;
 using Domain.Models;
 using NUnit.Framework;
 
 namespace Domain.Tests
 {
-    public class GivenNormalItem
+    class GivenNormalItem
     {
         private SellingItem _sellingItem;
 
         [SetUp]
-        public void Setup()
+        public void SetUp()
         {
             _sellingItem = new SellingItem()
             {
@@ -22,31 +24,31 @@ namespace Domain.Tests
         [Test]
         public void SellingDaysDecreasesByOne()
         {
-            var n = new NormalItem(_sellingItem);
-            Assert.AreEqual(0, n.SellingDays);
+            var s = InventoryFactory.Get(_sellingItem);
+            Assert.AreEqual(0, s.SellingDays);
         }
 
         [Test]
         public void QualityDecreasesByOne()
         {
-            var n = new NormalItem(_sellingItem);
-            Assert.AreEqual(0, n.Quality);
+            var s = InventoryFactory.Get(_sellingItem);
+            Assert.AreEqual(0, s.Quality);
         }
 
         [Test]
         public void QualityIsNeverAbove50()
         {
             _sellingItem.Quality = 53;
-            var n = new NormalItem(_sellingItem);
-            Assert.AreEqual(50, n.Quality);
+            var s = InventoryFactory.Get(_sellingItem);
+            Assert.AreEqual(50, s.Quality);
         }
 
         [Test]
         public void QualityIsNeverBelowZero()
         {
             _sellingItem.Quality = 0;
-            var n = new NormalItem(_sellingItem);
-            Assert.AreEqual(0, n.Quality);
+            var s = InventoryFactory.Get(_sellingItem);
+            Assert.AreEqual(0, s.Quality);
         }
 
         [Test]
@@ -54,8 +56,8 @@ namespace Domain.Tests
         {
             _sellingItem.SellingDays = -1;
             _sellingItem.Quality = 5;
-            var n = new NormalItem(_sellingItem);
-            Assert.AreEqual(3, n.Quality);
+            var s = InventoryFactory.Get(_sellingItem);
+            Assert.AreEqual(3, s.Quality);
         }
     }
 }

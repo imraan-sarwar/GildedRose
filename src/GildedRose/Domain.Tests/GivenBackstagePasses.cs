@@ -1,5 +1,4 @@
 ﻿using Domain.Inventory;
-using Domain.Inventory.Items;
 using Domain.Models;
 using NUnit.Framework;
 using System;
@@ -24,8 +23,8 @@ namespace Domain.Tests
         [Test]
         public void SellingDaysDecreasesByOne()
         {
-            var b = new BackstagePasses(_sellingItem);
-            Assert.AreEqual(0, b.SellingDays);
+            var s = InventoryFactory.Get(_sellingItem);
+            Assert.AreEqual(0, s.SellingDays);
         }
 
 
@@ -34,16 +33,16 @@ namespace Domain.Tests
         {
             _sellingItem.Quality = 53;
             _sellingItem.SellingDays = 5;
-            var b = new BackstagePasses(_sellingItem);
-            Assert.AreEqual(50, b.Quality);
+            var s = InventoryFactory.Get(_sellingItem);
+            Assert.AreEqual(50, s.Quality);
         }
 
         [Test]
         public void QualityIsNeverBelowZero()
         {
             _sellingItem.Quality = 0;
-            var b = new BackstagePasses(_sellingItem);
-            Assert.AreEqual(0, b.Quality);
+            var s = InventoryFactory.Get(_sellingItem);
+            Assert.AreEqual(0, s.Quality);
         }
 
         [Test]
@@ -51,24 +50,24 @@ namespace Domain.Tests
         {
             _sellingItem.Quality = 15;
             _sellingItem.SellingDays = 15;
-            var b = new BackstagePasses(_sellingItem);
-            Assert.AreEqual(16, b.Quality);
+            var s = InventoryFactory.Get(_sellingItem);
+            Assert.AreEqual(16, s.Quality);
         }
 
         public void SellingDaysIsLessThan10_Then_QualityIncreasesByTwo()
         {
             _sellingItem.Quality = 20;
             _sellingItem.SellingDays = 9;
-            var b = new BackstagePasses(_sellingItem);
-            Assert.AreEqual(22, b.Quality);
+            var s = InventoryFactory.Get(_sellingItem);
+            Assert.AreEqual(22, s.Quality);
         }
 
         public void SellingDaysIs10_Then_QualityIncreasesByTwo()
         {
             _sellingItem.Quality = 20;
             _sellingItem.SellingDays = 10;
-            var b = new BackstagePasses(_sellingItem);
-            Assert.AreEqual(22, b.Quality);
+            var s = InventoryFactory.Get(_sellingItem);
+            Assert.AreEqual(22, s.Quality);
         }
 
         [Test]
@@ -76,8 +75,8 @@ namespace Domain.Tests
         {
             _sellingItem.Quality = 20;
             _sellingItem.SellingDays = 4;
-            var b = new BackstagePasses(_sellingItem);
-            Assert.AreEqual(23, b.Quality);
+            var s = InventoryFactory.Get(_sellingItem);
+            Assert.AreEqual(23, s.Quality);
         }
 
         [Test]
@@ -85,8 +84,8 @@ namespace Domain.Tests
         {
             _sellingItem.Quality = 20;
             _sellingItem.SellingDays = 5;
-            var b = new BackstagePasses(_sellingItem);
-            Assert.AreEqual(23, b.Quality);
+            var s = InventoryFactory.Get(_sellingItem);
+            Assert.AreEqual(23, s.Quality);
         }
 
         [Test]
@@ -94,8 +93,8 @@ namespace Domain.Tests
         {
             _sellingItem.Quality = 0;
             _sellingItem.SellingDays = 1;
-            var b = new BackstagePasses(_sellingItem);
-            Assert.AreEqual(0, b.Quality);
+            var s = InventoryFactory.Get(_sellingItem);
+            Assert.AreEqual(0, s.Quality);
         }
     }
 }
