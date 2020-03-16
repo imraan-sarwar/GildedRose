@@ -16,6 +16,8 @@ namespace Domain.Inventory
                     return new BackstagePasses(item);
                 case "Normal Item":
                     return new NormalItem(item);
+                case "Sulfuras":
+                    return new Sulfuras(item);
             }
             return new Invalid(item);
         }
