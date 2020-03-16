@@ -14,10 +14,12 @@ namespace Domain.Inventory
                     return new AgedBrie(item);
                 case "Backstage passes":
                     return new BackstagePasses(item);
-                case "Normal Item":
-                    return new NormalItem(item);
                 case "Sulfuras":
                     return new Sulfuras(item);
+                case "Normal Item":
+                    return new NormalItem(item);
+                case "Conjured":
+                    return new Conjured(item);
             }
             return new Invalid(item);
         }
